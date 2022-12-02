@@ -14,3 +14,9 @@ let tryParseInt (s: string): int =
 
 let wl (inp: string): unit =
     System.Console.WriteLine(inp)
+
+let (%%) (inp: int) (modulus: int): int =
+    let rem: int = inp % modulus
+    match rem with
+    | (r: int) when r < 0 -> r + modulus
+    | _ -> rem  
