@@ -1,0 +1,4 @@
+{
+    "FSharp.inlayHints.typeAnnotations": true,
+    "FSharp.inlayHints.parameterNames": false,
+}
