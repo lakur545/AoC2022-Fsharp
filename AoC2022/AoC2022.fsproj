@@ -7,7 +7,7 @@
     <Compile Include="Common\CommonFuncs.fs" />
     <Compile Include="Day1\Day1.fs" />
     <Compile Include="Day2\Day2.fs" />
-	<Compile Include="Day3\Day3.fs" />
+	  <Compile Include="Day3\Day3.fs" />
     <Compile Include="Day4\Day4.fs" />
     <Compile Include="Day5\Day5.fs" />
     <Compile Include="Day6\Day6.fs" />
