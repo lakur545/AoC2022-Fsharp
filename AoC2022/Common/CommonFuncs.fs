@@ -1,5 +1,6 @@
 module CommonFuncs
 
+//reading
 let InputOfDay (day: int): string = 
     let cwd: string = System.IO.Directory.GetCurrentDirectory()
     $"{cwd}\\Day{day}\\input.txt"
@@ -11,12 +12,21 @@ let TestInputOfDay (day:int): string =
 let ReadDayText (day: int) (seperator: string): string list = Array.toList (System.IO.File.ReadAllText(InputOfDay(day)).Split(seperator))
 let ReadDayTestText (day: int) (seperator: string): string list = Array.toList (System.IO.File.ReadAllText(TestInputOfDay(day)).Split(seperator))
 
+//parsing
 let tryParseInt (s: string): int = 
     try 
         s |> int
     with :? System.FormatException -> 
         0
+let BtoI (inp: bool): int = if inp then 1 else 0
 
+let FindCharInString (str: string): (char->string) =
+    let SubFnc (inp: char): string =
+        String.filter (fun (x:char) -> x = inp) str |> 
+        (fun (x: string) -> if x.Length = 0 then "" else x)
+    SubFnc
+
+//printing
 let wl (inp: string): unit =
     printf "%s\n" inp
 
@@ -26,12 +36,7 @@ let wlp (var: 'a) : (string -> 'a) =
         var
     SubFunc
 
-let FindCharInString (str: string): (char->string) =
-    let SubFnc (inp: char): string =
-        String.filter (fun (x:char) -> x = inp) str |> 
-        (fun (x: string) -> if x.Length = 0 then "" else x)
-    SubFnc
-
+// operators
 let (%%) (inp: int) (modulus: int): int =
     let rem: int = inp % modulus
     match rem with
